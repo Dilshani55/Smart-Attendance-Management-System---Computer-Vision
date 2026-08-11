@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Sample student roster for CS402.3 SAMS coursework.
+    Fill in real index numbers / names from the signing sheets (Images 1-5).
+    "row" tells sams.py which row of the signature table this student
+    occupies (1-indexed, matches the "No" column on the signing sheet).
+-->
+<students subject="CGV" code="CS402.3">
+    <student>
+        <row>1</row>
+        <index>10000409</index>
+        <title>Ms</title>
+        <name>M S Dilshanika Perera</name>
+    </student>
+    <student>
+        <row>2</row>
+        <index>10009301</index>
+        <title>Mr</title>
+        <name>C W M A Shehan Abeyrathne</name>
+    </student>
+    <student>
+        <row>3</row>
+        <index>10009302</index>
+        <title>Mr</title>
+        <name>B A K M Chithrananda</name>
+    </student>
+    <student>
+        <row>4</row>
+        <index>10009303</index>
+        <title>Ms</title>
+        <name>W Shashini Minosha De Silva</name>
+    </student>
+    <student>
+        <row>5</row>
+        <index>10009304</index>
+        <title>Mr</title>
+        <name>K L Udara Maduranga Liyanage</name>
+    </student>
+    <student>
+        <row>6</row>
+        <index>10009306</index>
+        <title>Mr</title>
+        <name>Hansa Anuradha Wickramanayake</name>
+    </student>
+</students>
