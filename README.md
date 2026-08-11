@@ -39,18 +39,18 @@ python investigate.py 10000409
 ```
 
 ## Team Roles (10 members)
-| Role | Owner | Branch |
-|---|---|---|
-| Team Lead / Git & LMS | | main / merges |
-| Image Preprocessing (greyscale, deskew, denoise) | | feature/preprocessing |
-| Table/Cell Detection | | feature/cell-detection |
-| Signature Presence Detection | | feature/presence-detect |
-| info.xml Parser & DB | | feature/db |
-| sams.py Orchestrator | | feature/orchestrator |
-| Visualization Dev 1 | | feature/infovis |
-| Visualization Dev 2 | | feature/infovis-extra |
-| Signature Recognition (investigate.py) | | feature/investigate |
-| QA / Testing & Report | | feature/testing |
+| # | Member | Owner | Owns (file/function) | What they actually code | Branch |
+|---|---|---|---|---|---|
+| 1 | **Dev 1 (You)** | | `sams.py` -> `load_image()`, `to_greyscale()` | Image loading + greyscale conversion, error handling for bad file paths | `feature/preprocessing` |
+| 2 | **Dev 2** | | `sams.py` -> `deskew()` | Rotation correction (minAreaRect-based deskew), test on all 5 sheets | `feature/deskew` |
+| 3 | **Dev 3** | | `sams.py` -> `binarize()`, `denoise()` | Adaptive thresholding + morphological noise removal, tune parameters | `feature/binarize-denoise` |
+| 4 | **Dev 4** | | `sams.py` -> `detect_signature_cells()` | Replace placeholder row-split with real table/grid detection (Hough lines or contour-based cell boundaries) | `feature/cell-detection` |
+| 5 | **Dev 5** | | `sams.py` -> `is_signed()` | Ink-pixel ratio / contour-count logic to decide present vs absent per cell, calibrate threshold | `feature/presence-detect` |
+| 6 | **Dev 6** | | `sams.py` -> `parse_roster()`, `init_db()`, `save_results()` | info.xml parsing + SQLite schema + saving attendance records | `feature/db` |
+| 7 | **Dev 7** | | `sams.py` -> `run()` (orchestrator) + logging | Wires everyone's functions together into the CLI tool, adds clear step-by-step console output for report screenshots | `feature/orchestrator` |
+| 8 | **Dev 8** | | `infovis.py` | Per-student attendance bar chart — extend with colors, percentage labels, session labels | `feature/infovis` |
+| 9 | **Dev 9** | | `infovis.py` extra + testing | Overall class summary chart (all 6 students, all 5 sessions) + runs `sams.py` against all 5 real sheets, logs results/errors | `feature/infovis-extra` |
+| 10 | **Dev 10** | | `investigate.py` | ORB signature comparison logic (bonus feature) + saving signature crops from Dev 4's cell detection | `feature/investigate` |
 
 ## Workflow
 1. Each member works on their own `feature/*` branch.
